@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_112803) do
+ActiveRecord::Schema.define(version: 2020_09_01_173125) do
 
   create_table "beta_users", force: :cascade do |t|
     t.string "name"
@@ -64,6 +64,19 @@ ActiveRecord::Schema.define(version: 2020_09_01_112803) do
     t.index ["group_id"], name: "index_member_groups_on_group_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.float "value"
+    t.string "type"
+    t.date "effective_date"
+    t.boolean "charge"
+    t.integer "member_group_id", null: false
+    t.integer "leader_group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["leader_group_id"], name: "index_payments_on_leader_group_id"
+    t.index ["member_group_id"], name: "index_payments_on_member_group_id"
+  end
+
   add_foreign_key "group_dates", "beta_users"
   add_foreign_key "group_dates", "groups"
   add_foreign_key "groups", "leader_groups"
@@ -72,4 +85,6 @@ ActiveRecord::Schema.define(version: 2020_09_01_112803) do
   add_foreign_key "leader_groups", "groups"
   add_foreign_key "member_groups", "beta_users"
   add_foreign_key "member_groups", "groups"
+  add_foreign_key "payments", "leader_groups"
+  add_foreign_key "payments", "member_groups"
 end
