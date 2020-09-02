@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 import '../css/application.css'
+import "@fortawesome/fontawesome-free/js/all";
 
 
 
