@@ -52,25 +52,35 @@
                     <font style="vertical-align: inherit;">Telefone</font>
                   </font>
                 </label>
-                <input type="email" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Telefone" style="transition: all 0.15s ease 0s;">
+                <input type="email" id="Phone" maxlength="15" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Telefone" style="transition: all 0.15s ease 0s;">
               </div>
             </div>
-            <div class="relative w-full px-1 mb-6">
-              <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                Serviço de Interesse
-              </label>
-              <div class="relative">
-                <select class="appearance-none w-full bg-white text-gray-700 py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline" id="grid-state">
-                  <option>Netflix</option>
-                  <option>Spotify</option>
-                  <option>Deezer</option>
-                  <option>Youtube Premium</option>
-                  <option>Outro</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+            <div class="flex flex-wrap mb-3">
+              <div class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0">
+                <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                  Serviço de Interesse
+                </label>
+                <div class="relative">
+                  <select id="Select" class="appearance-none w-full bg-white text-gray-700 py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline" id="grid-state">
+                    <option>Netflix</option>
+                    <option>Spotify</option>
+                    <option>Deezer</option>
+                    <option>Youtube Premium</option>
+                    <option>Outro</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                  </div>
                 </div>
+              </div>
+              <div id="interest" class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0 hidden">
+                <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="email">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Interesse</font>
+                  </font>
+                </label>
+                <input type="email" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Telefone" style="transition: all 0.15s ease 0s;">
               </div>
             </div>
             <div class="md:flex md:items-center mb-6">
