@@ -1,6 +1,8 @@
 class BetaUsersController < ApplicationController
   before_action :set_beta_user, only: %i[show edit update destroy]
 
+  def index; end
+
   def show; end
 
   def new
@@ -10,7 +12,7 @@ class BetaUsersController < ApplicationController
   def create
     @beta_user = BetaUser.new(params_beta_user)
     if @beta_user.save
-      redirect_to landing_page_thanks
+      redirect_to landing_page_thanks_path
     else
       redirect_to root
     end
@@ -41,6 +43,6 @@ class BetaUsersController < ApplicationController
   end
 
   def params_beta_user
-    params[:beta_user].permit(:name, :email, :phone, :messaging_service, :service_of_interest)
+    params.permit(:name, :email, :phone, :messaging_service, :service_of_interest)
   end
 end

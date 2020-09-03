@@ -41,6 +41,6 @@ class GroupsController < ApplicationController
   end
 
   def params_group
-    params[:group].permit(:title, :description, :service)
+    params.permit(:title, :description, :service)
   end
 end
