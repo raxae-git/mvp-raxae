@@ -6,7 +6,7 @@ class BetaUser < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :phone, presence: true
+  validates :phone, presence: true, uniqueness: true
   validates :messaging_service, presence: true
   validates :service_of_interest, presence: true
 
