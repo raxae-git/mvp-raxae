@@ -16,7 +16,7 @@ class BetaUsersController < ApplicationController
         redirect_to landing_page_thanks_path
       end
     else
-      redirect_to root
+      redirect_to root_path
     end
   end
 
@@ -45,7 +45,7 @@ class BetaUsersController < ApplicationController
   end
 
   def params_beta_user
-    params.permit(:name, :email, :phone, :messaging_service, :service_of_interest)
+    params.require(:beta_user).permit(:name, :email, :phone, :messaging_service, :service_of_interest)
   end
 
   def find_or_create_service(title_service)

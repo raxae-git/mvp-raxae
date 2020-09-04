@@ -7,6 +7,7 @@ window.onload = function () {
     if (value == "Outro") {
       interest.classList.remove('hidden');
       extra.disabled = false
+      extra.required = "required"
     }
     else {
       interest.classList.add('hidden');

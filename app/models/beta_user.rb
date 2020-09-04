@@ -4,6 +4,12 @@ class BetaUser < ApplicationRecord
   has_many :group_dates
   has_many :deleted_members
 
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :phone, presence: true
+  validates :messaging_service, presence: true
+  validates :service_of_interest, presence: true
+
   after_create :send_confirmation
 
   private
