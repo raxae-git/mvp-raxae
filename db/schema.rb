@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2020_09_03_184805) do
 
   create_table "payments", force: :cascade do |t|
     t.float "value"
-    t.string "type"
+    t.string "kind"
     t.date "effective_date"
     t.boolean "charge"
     t.integer "member_group_id", null: false
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2020_09_03_184805) do
 
   create_table "services", force: :cascade do |t|
     t.string "title"
-    t.string "type"
+    t.string "kind"
     t.string "description"
     t.decimal "value"
     t.datetime "created_at", precision: 6, null: false

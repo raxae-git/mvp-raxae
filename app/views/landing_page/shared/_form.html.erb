@@ -28,7 +28,7 @@
               <font style="vertical-align: inherit;">Email</font>
             </font>
             <% end %>
-            <%= f.text_field :email, class:"px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Ex.: example@email.com", style:"transition: all 0.15s ease 0s;" %>
+            <%= f.email_field :email, class:"px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Ex.: example@email.com", style:"transition: all 0.15s ease 0s;" %>
           </div>
           <div class="flex flex-wrap mb-3">
             <div class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0">
@@ -54,7 +54,8 @@
             <div class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0">
               <%= f.label "Serviço de Interesse", class:"block uppercase text-gray-700 text-xs font-bold mb-2" %>
               <div class="relative">
-                <%= f.select :service_of_interest, options_for_select(['', 'Netflix', 'Spotify', 'Deezer', 'Youtube Premium', 'Outro']),{}, {id:"Selected", class:"appearance-none w-full bg-white text-gray-700 py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline"} %>
+                <% services_array = @services.map {|s| [s.title, s.title]}%>
+                <%= f.select :service_of_interest, options_for_select(services_array.push(["Outro", "Outro"])), {include_blank: true}, {id:"Selected", class:"appearance-none w-full bg-white text-gray-700 py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline"} %>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>

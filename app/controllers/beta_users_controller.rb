@@ -12,7 +12,9 @@ class BetaUsersController < ApplicationController
   def create
     @beta_user = BetaUser.new(params_beta_user)
     if @beta_user.save
-      redirect_to landing_page_thanks_path
+      if find_or_create_service(@beta_user.service_of_interest)
+        redirect_to landing_page_thanks_path
+      end
     else
       redirect_to root
     end
@@ -44,5 +46,26 @@ class BetaUsersController < ApplicationController
 
   def params_beta_user
     params.permit(:name, :email, :phone, :messaging_service, :service_of_interest)
+  end
+
+  def find_or_create_service(title_service)
+    if find_service(title_service).blank?
+      create_service(title_service)
+    else
+      true
+    end
+
+  end
+
+  def find_service(title_service)
+    services = Service.where("title LIKE ?", "%#{title_service}%")
+  end
+
+  def create_service(title_service)
+    if Service.create(title: title_service)
+      true
+    else
+      false
+    end
   end
 end

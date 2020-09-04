@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+services = ["Netflix",
+            "Spotify",
+            "Deezer",
+            "Youtube Premium"]
+
+puts "Cadastrando Serviços"
+  services.each do |service|  
+    Service.create!(
+      title: service,
+      kind: "Video/Musica",
+      description: "Zombie ipsum reversus ab viral inferno"
+    )
+  end
+puts "OK!!!"

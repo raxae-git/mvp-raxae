@@ -1,5 +1,7 @@
 class LandingPageController < ApplicationController
-  def index; end
+  def index
+    @services = Service.all
+  end
 
   def thanks; end
 
