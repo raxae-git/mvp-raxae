@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   root 'landing_page#index'
 
   get '/landing_page/thanks', to: 'landing_page#thanks'
