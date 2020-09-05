@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   get '/landing_page/thanks', to: 'landing_page#thanks'
   post '/landing_page', to: 'landing_page#create'
-  resources :beta_users
-  resources :groups
+
+  namespace :backoffice do
+    resources :beta_users
+    resources :groups
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
