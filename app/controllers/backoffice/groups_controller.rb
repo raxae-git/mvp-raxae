@@ -1,4 +1,4 @@
-class Backoffice::GroupsController < ApplicationController
+class Backoffice::GroupsController < BackofficeController
   before_action :set_group, only: %i[show edit update destroy]
 
   def show; end

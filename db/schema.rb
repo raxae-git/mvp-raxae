@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_135617) do
+ActiveRecord::Schema.define(version: 2020_09_05_172706) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_09_05_135617) do
     t.integer "leader_group_id", null: false
     t.integer "member_group_id", null: false
     t.integer "service_id", null: false
+    t.decimal "value"
     t.index ["leader_group_id"], name: "index_groups_on_leader_group_id"
     t.index ["member_group_id"], name: "index_groups_on_member_group_id"
     t.index ["service_id"], name: "index_groups_on_service_id"

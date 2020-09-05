@@ -1,4 +1,4 @@
-class Backoffice::BetaUsersController < ApplicationController
+class Backoffice::BetaUsersController < BackofficeController
   before_action :set_beta_user, only: %i[show edit update destroy]
 
   def index; end
