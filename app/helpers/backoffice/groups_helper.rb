@@ -1,2 +1,2 @@
-module GroupsHelper
+module Backoffice::GroupsHelper
 end

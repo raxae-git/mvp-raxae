@@ -1,7 +1,7 @@
 <div class="relative block py-24 lg:pt-0">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap justify-center">
-      <%= form_with model: @beta_user, url: backoffice_beta_users_path(@beta_user), class:" w-full lg:w-6/12 px-4", local: true do |f| %>
+      <%= form_with model: @beta_user, url: landing_page_path(@beta_user), class:" w-full lg:w-6/12 px-4", local: true do |f| %>
       <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
         <div class="flex-auto p-5 lg:p-10">
           <h4 class="text-2xl font-semibold">

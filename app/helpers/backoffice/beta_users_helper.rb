@@ -1,2 +1,2 @@
-module BetaUsersHelper
+module Backoffice::BetaUsersHelper
 end
