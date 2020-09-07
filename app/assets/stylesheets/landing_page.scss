@@ -3,3 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+#myProgress {
+  background-color: grey;
+  transform: rotate(180deg);
+}
+
+#myBar {
+  height: 0%;
+  background-color: green;  
+}

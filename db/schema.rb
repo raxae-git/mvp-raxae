@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_172706) do
+ActiveRecord::Schema.define(version: 2020_09_06_184520) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2020_09_05_172706) do
   create_table "deleted_members", force: :cascade do |t|
     t.string "name"
     t.integer "group_id", null: false
-    t.integer "payment_id", null: false
     t.boolean "leader"
     t.string "reason"
     t.date "entry_date"
@@ -67,14 +66,12 @@ ActiveRecord::Schema.define(version: 2020_09_05_172706) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "deleted_group_id", null: false
-    t.integer "id_deleted"
     t.integer "deleted_beta_user_id", null: false
     t.integer "beta_user_id", null: false
     t.index ["beta_user_id"], name: "index_deleted_members_on_beta_user_id"
     t.index ["deleted_beta_user_id"], name: "index_deleted_members_on_deleted_beta_user_id"
     t.index ["deleted_group_id"], name: "index_deleted_members_on_deleted_group_id"
     t.index ["group_id"], name: "index_deleted_members_on_group_id"
-    t.index ["payment_id"], name: "index_deleted_members_on_payment_id"
   end
 
   create_table "group_dates", force: :cascade do |t|
@@ -125,11 +122,12 @@ ActiveRecord::Schema.define(version: 2020_09_05_172706) do
     t.float "value"
     t.string "kind"
     t.date "effective_date"
-    t.boolean "charge"
     t.integer "member_group_id", null: false
     t.integer "leader_group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "deleted_member_id", null: false
+    t.index ["deleted_member_id"], name: "index_payments_on_deleted_member_id"
     t.index ["leader_group_id"], name: "index_payments_on_leader_group_id"
     t.index ["member_group_id"], name: "index_payments_on_member_group_id"
   end
@@ -149,7 +147,6 @@ ActiveRecord::Schema.define(version: 2020_09_05_172706) do
   add_foreign_key "deleted_members", "deleted_beta_users"
   add_foreign_key "deleted_members", "deleted_groups"
   add_foreign_key "deleted_members", "groups"
-  add_foreign_key "deleted_members", "payments"
   add_foreign_key "group_dates", "beta_users"
   add_foreign_key "group_dates", "groups"
   add_foreign_key "groups", "leader_groups"
@@ -159,6 +156,7 @@ ActiveRecord::Schema.define(version: 2020_09_05_172706) do
   add_foreign_key "leader_groups", "groups"
   add_foreign_key "member_groups", "beta_users"
   add_foreign_key "member_groups", "groups"
+  add_foreign_key "payments", "deleted_members"
   add_foreign_key "payments", "leader_groups"
   add_foreign_key "payments", "member_groups"
 end

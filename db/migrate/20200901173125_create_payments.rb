@@ -4,7 +4,6 @@ class CreatePayments < ActiveRecord::Migration[6.0]
       t.float :value
       t.string :kind
       t.date :effective_date
-      t.boolean :charge
       t.references :member_group, null: false, foreign_key: true
       t.references :leader_group, null: false, foreign_key: true
 

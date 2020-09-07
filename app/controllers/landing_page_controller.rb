@@ -1,4 +1,5 @@
 class LandingPageController < ApplicationController
+  layout "landing_page"
   def index
     @services = Service.all
     @beta_user = BetaUser.new
