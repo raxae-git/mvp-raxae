@@ -1,17 +1,23 @@
-  <div class="relative bg-white overflow-hidden">
+<main>
+  <div id="teste" class="relative bg-white overflow-hidden">
+    <div class=" absolute top-0 w-full h-full bg-center bg-cover" style="background-image:url(<%= asset_path('Material/Material/pexels-helena-lopes-708392.jpg')%>)">
+      <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+    </div>
+    <%= render partial: "landing_page/shared/navigation" %>
     <div class="max-w-screen-xl mx-auto">
-      <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-        <%= render partial: "landing_page/shared/navigation" %>
+      <div class="relative z-10 pt-8 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
         <%= render partial: "landing_page/shared/headline" %>
       </div>
     </div>
-    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
-    </div>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden" style="height:70px;transform:translateZ(0)"><svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+      </svg></div>
   </div>
   <%= render partial: "landing_page/shared/content" %>
   <%= render partial: "landing_page/shared/operation" %>
   <%= render partial: "landing_page/shared/goals" %>
   <%= render partial: "landing_page/shared/example" %>
   <%= render partial: "landing_page/shared/form" %>
-  <%= render partial: "landing_page/shared/footer" %>
+</main>
+
+<%= render partial: "landing_page/shared/footer" %>
