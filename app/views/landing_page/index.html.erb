@@ -1,7 +1,7 @@
 <main>
   <div id="teste" class="relative bg-white overflow-hidden">
     <div class=" absolute top-0 w-full h-full bg-center bg-cover" style="background-image:url(<%= asset_path('Material/Material/pexels-helena-lopes-708392.jpg')%>)">
-      <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+      <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-neutral"></span>
     </div>
     <%= render partial: "landing_page/shared/navigation" %>
     <div class="max-w-screen-xl mx-auto">
@@ -10,16 +10,16 @@
       </div>
     </div>
     <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden" style="height:70px;transform:translateZ(0)"><svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-        <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+        <polygon class="text-gray fill-current" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
   </div>
   <%= render partial: "landing_page/shared/content" %>
-  <div class="bg-indigo-100">
+  <div class="bg-main-100">
     <%= render partial: "landing_page/shared/operation" %>
   </div>
   <%= render partial: "landing_page/shared/goals" %>
-  <div class="bg-indigo-100">
+  <div class="bg-main-100">
     <%= render partial: "landing_page/shared/example" %>
   </div>
   <%= render partial: "landing_page/shared/form" %>
