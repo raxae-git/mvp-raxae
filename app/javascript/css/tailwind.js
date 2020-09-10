@@ -37,6 +37,7 @@ module.exports = {
       'green-700': '#43820d',
       'green-800': '#2f6809',
       'green-900': '#225604',
+      whatsapp: '#48c757',
       white: '#FFFFFF',
     },
     extend: {},
