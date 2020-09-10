@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_06_184520) do
+ActiveRecord::Schema.define(version: 2020_09_10_195825) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2020_09_06_184520) do
     t.string "service_of_interest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "count_user_id", default: 1, null: false
+    t.index ["count_user_id"], name: "index_beta_users_on_count_user_id"
+  end
+
+  create_table "count_users", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "beta_users_count"
   end
 
   create_table "deleted_beta_users", force: :cascade do |t|
@@ -141,6 +149,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_184520) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "beta_users", "count_users"
   add_foreign_key "deleted_groups", "payments"
   add_foreign_key "deleted_groups", "services"
   add_foreign_key "deleted_members", "beta_users"

@@ -1,8 +1,9 @@
 class LandingPageController < ApplicationController
-  layout "landing_page"
+  layout 'landing_page'
   def index
     @services = Service.all
     @beta_user = BetaUser.new
+    @count = CountUser.first.beta_users_count
   end
 
   def thanks; end

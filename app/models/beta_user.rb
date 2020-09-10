@@ -3,6 +3,7 @@ class BetaUser < ApplicationRecord
   has_many :leader_groups
   has_many :group_dates
   has_many :deleted_members
+  belongs_to :count_user, counter_cache: true
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
