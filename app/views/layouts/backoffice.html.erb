@@ -13,8 +13,13 @@
 </head>
 
 <body>
-  <%= render partial: "layouts/navigation" %>
-  <%= yield %>
+  <div class="wrapper">
+    <%= render partial: "layouts/navigation" %>
+
+    <div class="container" class="container">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 
 </html>

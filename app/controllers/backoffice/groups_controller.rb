@@ -1,6 +1,10 @@
 class Backoffice::GroupsController < BackofficeController
   before_action :set_group, only: %i[show edit update destroy]
 
+  def index
+    @groups = Group.all
+  end
+  
   def show; end
 
   def new
