@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   root 'landing_page#index'
 
-  get '/landing_page/thanks', to: 'landing_page#thanks'
+  get '/landing_page/thanks/:id', to: 'landing_page#thanks'
   post '/landing_page', to: 'landing_page#create'
   get '/dashboard', to: 'backoffice/dashboard#index'
 

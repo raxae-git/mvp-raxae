@@ -27,6 +27,7 @@ module.exports = {
         'form-PJA': '#0f1e23',
         'input-PJA': '#223034',
         'gray-PJA': '#CFCFCF',
+        'gray-PJA-900': '#828282',
         gray: '#F7F7F7',
         'gray-100': '#f7fafc',
         'gray-200': '#edf2f7',

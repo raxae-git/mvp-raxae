@@ -6,12 +6,14 @@ class LandingPageController < ApplicationController
     @count = CountUser.first.beta_users_count
   end
 
-  def thanks; end
+  def thanks
+    @beta_user = BetaUser.find(params[:id])
+  end
 
   def create
     @beta_user = BetaUser.new(params.require(:beta_user).permit(:name, :email, :phone, :messaging_service, :service_of_interest))
     if @beta_user.save
-      redirect_to landing_page_thanks_path if find_or_send_new_service(@beta_user.service_of_interest)
+      redirect_to landing_page_thanks_path(@beta_user) if find_or_send_new_service(@beta_user.service_of_interest)
     else
       render :index
     end
