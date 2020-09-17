@@ -1,25 +1,21 @@
 module LandingPageHelper
-  def change_class_200(number)
+  def change_class(number, cond1, cond2)
     if number.blank?
-      'bg-main text-white'
+      ''
     else
-      if number <= 200
-        'bg-main text-white'
-      else
-        'bg-white text-gray-400'
-      end
+      'ativo' if number > cond1 && number <= cond2
     end
   end
 
-  def change_class(number, cond1, cond2)
+  def change_class_text(number, cond)
     if number.blank?
-      'bg-white text-gray-400'
+      ''
     else
-      if number > cond1 && number <= cond2
-        'bg-main text-white'
+      if number >= cond 
+        'text-main'
       else
-        'bg-white text-gray-400'
-      end
+        'text-gray-PJA'
+      end 
     end
   end
 end

@@ -1,79 +1,74 @@
-<section id="form" class="pb-20 bg-gray">
+<section id="form" class="bg-neutral">
   <div class="bottom-auto left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height:80px;transform:translateZ(0)">
     <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-      <polygon class="text-gray fill-current" points="2560 0 2560 100 0 100"></polygon>
+      <polygon class="text-neutral fill-current" points="2560 0 2560 100 0 100"></polygon>
     </svg>
   </div>
-  <div class="flex flex-wrap justify-center text-center">
-    <div class="w-full lg:w-6/12 px-4">
-      <h2 class="text-4xl font-semibold">
-        <font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;">Venha a bordo do Raxaê</font>
-        </font>
-      </h2>
-    </div>
+  <div class="pt-24">
+    <h3 class="text-4xl mb-2 italic text-center font-bold text-white leading-normal">Venha a bordo do Raxaê</h3>
+    <hr class="borda w-16 h-1 mr-auto ml-auto text-center mt-5 border-main">
   </div>
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto pb-40">
     <div class="flex flex-wrap justify-center items-center">
-      <div class="w-full flex flex-wrap md:w-6/12 mt-16 shadow-lg rounded-lg bg-gray-300">
+      <div class="w-full flex flex-wrap md:w-6/12 mt-16 shadow-lg rounded-lg bg-form-PJA">
         <%= form_with model: @beta_user, url: landing_page_path(@beta_user), class:" w-full px-4", local: true do |f| %>
         <div class="relative flex flex-col min-w-0 break-words w-full mb-6">
           <div class="flex-auto lg:p-5">
             <div class="relative w-full px-1 mb-3 mt-8">
-              <%= f.label :name, class:"block uppercase text-gray-700 text-xs font-bold mb-2" do %>
+              <%= f.label :name, class:"block uppercase text-white text-xs font-bold mb-2" do %>
               <font style="vertical-align: inherit;">
                 <font style="vertical-align: inherit;">Nome</font>
               </font>
               <% end %>
-              <%= f.text_field :name, class:"px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Ex.: Paulo Pinho de Souza", style:"transition: all 0.15s ease 0s;", required: true %>
+              <%= f.text_field :name, class:"px-3 py-3 placeholder-gray-400 text-white bg-input-PJA rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Ex.: Paulo Pinho de Souza", style:"transition: all 0.15s ease 0s;", required: true %>
             </div>
             <div class="relative w-full px-1 mb-3 mt-8">
-              <%= f.label :email, class:"block uppercase text-gray-700 text-xs font-bold mb-2" do %>
+              <%= f.label :email, class:"block uppercase text-xs text-white font-bold mb-2" do %>
               <font style="vertical-align: inherit;">
                 <font style="vertical-align: inherit;">Email</font>
               </font>
               <% end %>
-              <%= f.email_field :email, class:"px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Ex.: example@email.com", style:"transition: all 0.15s ease 0s;", required: true %>
+              <%= f.email_field :email, class:"px-3 py-3 placeholder-gray-400 text-white bg-input-PJA rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Ex.: example@email.com", style:"transition: all 0.15s ease 0s;", required: true %>
             </div>
             <div class="flex flex-wrap mb-3">
               <div class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0">
-                <%= f.label "Serviço de Mensagem", class:"block uppercase text-gray-700 text-xs font-bold mb-2" %>
+                <%= f.label "Serviço de Mensagem", class:"block text-white uppercase text-xs font-bold mb-2" %>
                 <div class="relative">
-                  <%= f.select :messaging_service, options_for_select(['Whatsapp', 'Telegram']),{}, {class:"appearance-none w-full bg-white text-gray-700 py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline", required: true} %>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <%= f.select :messaging_service, options_for_select(['Whatsapp', 'Telegram']),{}, {class:"appearance-none w-full bg-input-PJA text-white py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline", required: true} %>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                   </div>
                 </div>
               </div>
               <div class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0">
-                <%= f.label :phone, class:"block uppercase text-gray-700 text-xs font-bold mb-2" do %>
+                <%= f.label :phone, class:"block uppercase text-white text-xs font-bold mb-2" do %>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Telefone</font>
                 </font>
                 <% end %>
-                <%= f.text_field :phone, id:"Phone", maxlength:"15", class:"px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Telefone", style:"transition: all 0.15s ease 0s;", required: true %>
+                <%= f.text_field :phone, id:"Phone", maxlength:"15", class:"px-3 py-3 placeholder-gray-400 text-white bg-input-PJA rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"(00) 00000-0000", style:"transition: all 0.15s ease 0s;", required: true %>
               </div>
             </div>
             <div class="flex flex-wrap mb-3">
               <div class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0">
-                <%= f.label "Serviço de Interesse", class:"block uppercase text-gray-700 text-xs font-bold mb-2" %>
+                <%= f.label "Serviço de Interesse", class:"block uppercase text-white text-xs font-bold mb-2" %>
                 <div class="relative">
                   <% services_array = @services.map {|s| [s.title, s.title]}%>
-                  <%= f.select :service_of_interest, options_for_select(services_array.push(["Outro", "Outro"])), {include_blank: true}, {id:"Selected", class:"appearance-none w-full bg-white text-gray-700 py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline", required: true} %>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <%= f.select :service_of_interest, options_for_select(services_array.push(["Outro", "Outro"])), {include_blank: true}, {id:"Selected", class:"appearance-none w-full bg-input-PJA text-white py-3 px-3 rounded text-sm shadow focus:outline-none focus:shadow-outline", required: true} %>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                   </div>
                 </div>
               </div>
               <div id="interest" class="relative w-full md:w-1/2 px-1 mb-6 md:mb-0 hidden">
-                <%= f.label "",class:"block uppercase text-gray-700 text-xs font-bold mb-2" do %>
+                <%= f.label "",class:"block uppercase text-white text-xs font-bold mb-2" do %>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Interesse</font>
                 </font>
                 <% end %>
-                <%= f.text_field :service_of_interest, id:"extra", class:"px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", placeholder:"Telefone", style:"transition: all 0.15s ease 0s;" %>
+                <%= f.text_field :service_of_interest, id:"extra", class:"px-3 py-3 placeholder-gray-400 text-white bg-input-PJA rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", style:"transition: all 0.15s ease 0s;" %>
               </div>
             </div>
             <div class="md:flex md:items-center mb-6">
@@ -86,7 +81,7 @@
               </label>
             </div>
             <div class="text-center mt-6">
-              <%= f.button :submit, class:"bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", style:"transition: all 0.15s ease 0s;" do %>
+              <%= f.button :submit, class:"bg-main text-white active:bg-gray-700 w-full text-sm italic font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", style:"transition: all 0.15s ease 0s;" do %>
               <font style="vertical-align: inherit;">
                 <font style="vertical-align: inherit;">Enviar mensagem</font>
               </font>

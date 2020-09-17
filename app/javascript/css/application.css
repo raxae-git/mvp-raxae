@@ -4,3 +4,38 @@
 
 @import "tailwindcss/utilities";
 
+.borda{
+  width: 68px;
+  height: 4px;
+  background: #008EE8 0% 0% no-repeat padding-box;
+  border-radius: 150px;
+  opacity: 1;
+}
+
+.borda-branca{
+  width: 68px;
+  height: 4px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 150px;
+  opacity: .32;
+}
+
+.PJA {
+  color: #ffffff;
+  opacity: .56;
+}
+
+.form-PJA {
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 0.04;
+}
+
+.input-PJA {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 0.08;
+}
+
+.ativo {
+box-shadow: 0px 10px 20px #008EE814;
+border: 2px solid #008EE8;
+}

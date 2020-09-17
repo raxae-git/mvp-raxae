@@ -1,11 +1,11 @@
-<main>
+<main class="bg-gray">
   <div class="relative bg-white overflow-hidden">
-    <div class=" absolute top-0 w-full h-full bg-center bg-cover" style="background-image:url(<%= asset_path('Material/Material/pexels-helena-lopes-708392.jpg')%>)">
+    <div class=" absolute top-0 w-full h-full bg-center bg-cover" style="background-image:url(<%= asset_path('Material/Material/pexels-helena-lopes-708392.jpg' )%>)">
       <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-neutral"></span>
     </div>
-    <div class="relative pt-6 px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full md:w-auto">
+    <div class="relative flex items-center justify-between w-full md:w-auto">
       <a href="#" aria-label="Home">
-        <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Logo">
+        <img class="h-10 ml-52 my-8 w-12" src="<%= asset_path('Material/Material/header_logo.png') %>" alt="Logo">
       </a>
     </div>
     <%= render partial: "landing_page/shared/headline" %>
@@ -17,15 +17,11 @@
     </div>
   </div>
   <%= render partial: "landing_page/shared/content" %>
-  <div class="bg-main-100">
-    <%= render partial: "landing_page/shared/operation" %>
-  </div>
+  <%= render partial: "landing_page/shared/team" %>
+  <%= render partial: "landing_page/shared/operation" %>
+  <%= render partial: "landing_page/shared/example" %>
   <%= render partial: "landing_page/shared/goals" %>
-  <div class="bg-main-100">
-    <%= render partial: "landing_page/shared/example" %>
-  </div>
   <%= render partial: "landing_page/shared/form" %>
-  </div>
 </main>
 
 <%= render partial: "landing_page/shared/footer" %>

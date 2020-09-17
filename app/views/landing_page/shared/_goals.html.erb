@@ -1,33 +1,37 @@
-<section class="pb-20 bg-neutral-400">
+<section class="pb-20">
   <div class="bottom-auto left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height:80px;transform:translateZ(0)">
     <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-      <polygon class="text-neutral-400 fill-current" points="2560 0 2560 100 0 100"></polygon>
+      <polygon class="text-gray fill-current" points="2560 0 2560 100 0 100"></polygon>
     </svg>
   </div>
-  <div class="flex flex-wrap justify-center text-center">
-    <div class="w-full lg:w-6/12 px-4">
-      <h2 class="text-4xl text-white font-semibold">
-        <font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;">Nossas Metas</font>
-        </font>
-      </h2>
-    </div>
+  <div class="py-32">
+    <h3 class="text-4xl mb-2 italic text-center font-bold leading-normal">Nossas Metas</h3>
+    <hr class="borda w-16 h-1 mr-auto ml-auto text-center mt-5 border-main">
   </div>
-  <div class="container w-11/12 mr-auto ml-auto items-center">
-
+  <div class="container w-full mr-auto ml-auto items-center -mt-64 md:mt-0">
     <div class="flex flex-wrap">
-      <div class="pt-48 w-full md:w-3/12 mr-auto ml-auto">
-        <div class="flex-auto">
-          <% if @count.blank? || @count <= 200%>
-          <img class="mr-auto ml-auto" src="<%= asset_path('Material/Material/recompensa_desafio_01.png')%>" />
-          <% elsif @count > 200 && @count <= 800 %>
-          <img class="mr-auto ml-auto" src="<%= asset_path('Material/Material/recompensa_desafio_02.png')%>" />
-          <% elsif @count > 800 && @count <= 2000%>
-          <img class="mr-auto ml-auto" src="<%= asset_path('Material/Material/recompensa_desafio_03.png')%>" />
-          <% end %>
+      <div class="pt-48 w-full md:w-3/12 px-4 mr-auto ml-auto">
+        <div class="flex-auto hidden md:block">
+          <div class="relative text-center bg-white shadow-lg <%= change_class(@count, 200, 2000) %> rounded-lg">
+            <div class="pt-12">
+              <p class="text-xs">
+                <img src="<%= asset_path('Material/Material/reward.svg')%>" class="w-12 h-16 mr-auto ml-auto" />
+              </p>
+            </div>
+            <div class="pt-5">
+              <p class="text-xs text-gray-PJA">Sorteio de</p>
+              <p class="text-2xl font-bold pt-1 uppercase">03 meses<br /> de spotify</p>
+              <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
+            </div>
+            <div class="<%= change_class_text(@count, 800) %> pt-10 pb-8">
+              <p class="text-sm">Raxadores Abordo</p>
+              <p class="text-3xl font-bold"><%= @count.blank? ? 0 : @count%>/800</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="pt-6 w-full mr-auto ml-auto md:w-5/12 px-4 justify-center">
+
+      <div class="w-full hidden md:block mr-auto ml-auto md:w-5/12 px-4 justify-center">
         <% if @count.blank? || @count < 200%>
         <img src="<%= asset_path('Material/Material/foguete_level_-1.png')%>" />
         <% elsif @count >= 200 && @count < 800 %>
@@ -38,39 +42,60 @@
         <img src="<%= asset_path('Material/Material/foguete_level_03.png')%>" />
         <% end %>
       </div>
-      <div class="w-8/12 sm:w-6/12 md:w-4/12 px-4 text-center mr-auto ml-auto mt-24">
-        <div class="relative <%= change_class(@count, 800, 2000) %> items-center border-teal-500 text-teal-900 lg:px-4 lg:py-3 mb-8 shadow-md rounded-lg">
-          <div class="flex">
-            <div class="py-1">
-              <div class="p-5 text-center inline-flex items-center justify-center fill-current"><i class="text-lg sm:text-xl md:text-2xl lg:text-3xl fas fa-user-friends text-lg"></i></div>
+      <div class="w-full md:w-3/12 px-4 text-center mr-auto ml-auto">
+        <div class="flex-auto mt-10 md:mt-0">
+          <div class="relative text-center bg-white <%= change_class(@count, 800, 2000) %> shadow-lg rounded-lg">
+            <div class="pt-12">
+              <p class="text-xs">
+                <img src="<%= asset_path('Material/Material/crown.svg')%>" class="w-12 h-16 mr-auto ml-auto" />
+              </p>
             </div>
-            <div class="mt-auto mb-auto pl-3">
-              <p class="text-left text-xs sm:text-sm md:text-md lg:text-lg">Raxadores Abordo</p>
-              <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-left -mt-2"><span class="font-bold"><%= @count.blank? ? 0 : @count%></span>/<span class="font-bold">2000</span></p>
+            <div class="pt-5">
+              <p class="text-xs text-gray-PJA">Sorteio de</p>
+              <p class="text-2xl font-bold pt-1 uppercase">1 ano de<br /> netflix</p>
+              <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
             </div>
-          </div>
-        </div>
-
-        <div class="relative <%= change_class(@count, 200, 800) %> items-center border-teal-500 text-teal-900 lg:px-4 lg:py-3 mb-8 shadow-md rounded-lg">
-          <div class="flex">
-            <div class="py-1">
-              <div class="p-5 text-center inline-flex items-center justify-center fill-current"><i class="text-lg sm:text-xl md:text-2xl lg:text-3xl fas fa-user-friends text-xl"></i></div>
-            </div>
-            <div class="mt-auto mb-auto pl-3">
-              <p class="text-left text-xs sm:text-sm md:text-md lg:text-lg">Raxadores Abordo</p>
-              <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-left -mt-2"><span class="font-bold"><%= @count.blank? ? 0 : @count%></span>/<span class="font-bold">800</span></p>
+            <div class="<%= change_class_text(@count, 2000) %> pt-10 pb-8">
+              <p class="text-sm">Raxadores Abordo</p>
+              <p class="text-3xl font-bold"><%= @count.blank? ? 0 : @count%>/2000</p>
             </div>
           </div>
         </div>
 
-        <div class="relative <%= change_class_200(@count) %> items-center border-teal-500 text-teal-900 lg:px-4 lg:py-3 shadow-md rounded-lg">
-          <div class="flex">
-            <div class="py-1">
-              <div class=" p-5 text-center inline-flex items-center justify-center fill-current"><i class="text-lg sm:text-xl md:text-2xl lg:text-3xl fas fa-user-friends text-xl"></i></div>
+        <div class="flex-auto block md:hidden mt-10 md:mt-20">
+          <div class="relative text-center bg-white shadow-lg <%= change_class(@count, 200, 2000) %> rounded-lg">
+            <div class="pt-12">
+              <p class="text-xs">
+                <img src="<%= asset_path('Material/Material/reward.svg')%>" class="w-12 h-16 mr-auto ml-auto" />
+              </p>
             </div>
-            <div class="mt-auto mb-auto pl-3 ">
-              <p class="text-left text-xs sm:text-sm md:text-md lg:text-lg">Raxadores Abordo</p>
-              <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-left -mt-2"><span class="font-bold"><%= @count.blank? ? 0 : @count%></span>/<span class="font-bold">200</span></p>
+            <div class="pt-5">
+              <p class="text-xs text-gray-PJA">Sorteio de</p>
+              <p class="text-2xl font-bold pt-1 uppercase">03 meses<br /> de spotify</p>
+              <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
+            </div>
+            <div class="<%= change_class_text(@count, 800) %> pt-10 pb-8">
+              <p class="text-sm">Raxadores Abordo</p>
+              <p class="text-3xl font-bold"><%= @count.blank? ? 0 : @count%>/800</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-auto mt-10 md:mt-20 md:mb-20">
+          <div class="relative text-center bg-white ativo rounded-lg">
+            <div class="pt-12">
+              <p class="text-xs">
+                <img src="<%= asset_path('Material/Material/medal-of-honor.svg')%>" class="w-12 h-16 mr-auto ml-auto" />
+              </p>
+            </div>
+            <div class="pt-5">
+              <p class="text-xs text-gray-PJA">Sorteio de</p>
+              <p class="text-2xl font-bold pt-1 uppercase">02 meses<br /> grátis</p>
+              <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
+            </div>
+            <div class="<%= change_class_text(@count, 200) %> pt-10 pb-8">
+              <p class="text-sm">Raxadores Abordo</p>
+              <p class="text-3xl font-bold"><%= @count.blank? ? 0 : @count%>/200</p>
             </div>
           </div>
         </div>
