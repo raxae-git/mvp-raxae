@@ -83,7 +83,13 @@
             <div class="text-center mt-6">
               <%= f.button :submit, class:"bg-main text-white active:bg-gray-700 w-full text-sm italic font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", style:"transition: all 0.15s ease 0s;" do %>
               <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Enviar mensagem</font>
+                <font style="vertical-align: inherit;">
+                  <% if @count < 200 %>
+                  Enviar mensagem
+                  <% else %>
+                  Entrar na fila de espera
+                  <% end %>
+                </font>
               </font>
               <% end %>
             </div>

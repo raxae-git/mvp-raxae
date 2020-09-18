@@ -11,11 +11,11 @@ class BetaUser < ApplicationRecord
   validates :messaging_service, presence: true
   validates :service_of_interest, presence: true
 
-  after_create :send_confirmation
+  # after_create :send_confirmation
 
-  private
+  # private
 
-  def send_confirmation
-    LeadMailer.with(lead: self).confirmation.deliver_later!
-  end
+  # def send_confirmation
+  #   LeadMailer.with(lead: self).confirmation.deliver_later!
+  # end
 end

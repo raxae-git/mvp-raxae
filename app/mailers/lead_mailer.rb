@@ -4,15 +4,8 @@ class LeadMailer < ApplicationMailer
   #
   #   en.lead_mailer.confirmation.subject
   #
-  before_action :load_lead
-
-  def confirmation
-    mail to: 'example@teste.com', subject: "lead Confirmation of #{@lead.name}"
-  end
-
-  private
-
-  def load_lead
-    @lead = params[:lead]
+  def confirmation(lead)
+    @lead = lead
+    mail to: 'example@teste.com', subject: "Dados #{@lead[:name]}"
   end
 end
