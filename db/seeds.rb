@@ -5,32 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+case Rails.env
+when 'production'
+  services = ['Netflix',
+              'Spotify',
+              'Deezer',
+              'Youtube Premium']
 
-services = ['Netflix',
-            'Spotify',
-            'Deezer',
-            'Youtube Premium']
+  puts 'Cadastrando Serviços'
+  services.each do |service|
+    Service.create!(
+      title: service,
+      kind: 'Video/Musica',
+      description: 'Zombie ipsum reversus ab viral inferno'
+    )
+  end
+  puts 'OK!!!'
 
-puts 'Cadastrando Serviços'
-services.each do |service|
-  Service.create!(
-    title: service,
-    kind: 'Video/Musica',
-    description: 'Zombie ipsum reversus ab viral inferno'
+  puts 'Cadastrando Administradores'
+  Admin.create!(
+    email: 'willamygt@gmail.com',
+    password: '12345678',
+    password_confirmation: '12345678'
   )
+  Admin.create!(
+    email: 'juniorpinho24@gmail.com',
+    password: '12345678',
+    password_confirmation: '12345678'
+  )
+  puts 'OK!!!'
+
+  puts 'Cadastrando Counter_Cache'
+  CountUser.create!(
+    id: 1
+  )
+  puts 'OK!!!'
 end
-puts 'OK!!!'
-
-puts 'Cadastrando Administradores'
-Admin.create!(
-  email: 'admin@email.com',
-  password: '12345678',
-  password_confirmation: '12345678'
-)
-puts 'OK!!!'
-
-puts 'Cadastrando Counter_Cache'
-CountUser.create!(
-  id: 1
-)
-puts 'OK!!!'
