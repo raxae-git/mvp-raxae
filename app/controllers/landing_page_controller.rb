@@ -7,9 +7,11 @@ class LandingPageController < ApplicationController
     @beta_user = BetaUser.new
   end
 
-  def thanks
-    @name = BetaUser.find(params[:id]).name
-  end
+  def thanks; end
+
+  def terms; end
+
+  def privacy_policies; end
 
   def create
     if @count >= 200
@@ -17,7 +19,7 @@ class LandingPageController < ApplicationController
     else
       @beta_user = BetaUser.new(beta_users_params)
       if @beta_user.save
-        redirect_to "/landing_page/thanks/#{@beta_user.id}" if find_or_send_new_service(@beta_user.service_of_interest)
+        redirect_to landing_page_thanks_path if find_or_send_new_service(@beta_user.service_of_interest)
       else
         render :index
       end

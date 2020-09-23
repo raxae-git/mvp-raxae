@@ -36,6 +36,11 @@
 }
 
 .ativo {
-box-shadow: 0px 10px 20px #008EE814;
-border: 2px solid #008EE8;
+  box-shadow: 0px 10px 20px #008EE814;
+  border: 2px solid #008EE8;
+}
+.thanks-msg-box{
+  background: #008EE8 0% 0% no-repeat padding-box;
+  box-shadow: 0px 12px 24px #09151A0F;
+  opacity: 0.05;
 }

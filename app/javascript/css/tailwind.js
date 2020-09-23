@@ -7,6 +7,9 @@ module.exports = {
       'body': ['Ubuntu'],
     },
     extend: {
+      opacity: {
+        '05': '0.05',
+      },
       colors: {
         main: '#008EE8',
         'main-100': '#cbf6fd',
