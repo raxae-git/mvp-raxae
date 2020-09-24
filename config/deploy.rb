@@ -23,5 +23,5 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
-set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w[~/.ssh/id_rsa] }
 server '18.223.209.47', user: 'deploy', roles: %w[web app db]
+set :ssh_options, { forward_agent: true }
