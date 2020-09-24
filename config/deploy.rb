@@ -1,5 +1,3 @@
-lock '3.4.0'
-
 set :application, 'mvp-raxae'
 set :repo_url, 'git@github.com:raxae-git/mvp-raxae.git' # Edit this to match your repository
 set :branch, :master
