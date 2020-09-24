@@ -18,18 +18,23 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'figaro'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
-
+# Use Puma as the app server
+gem 'puma', '~> 4.1'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '~> 3.2'
@@ -41,8 +46,6 @@ group :development do
   # Rails ERD - Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
   gem 'sqlite3', '~> 1.4'
-  # Use Puma as the app server
-gem 'puma', '~> 4.1'
 end
 
 group :production do
