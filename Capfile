@@ -13,6 +13,7 @@ require 'capistrano/deploy'
 # install_plugin Capistrano::SCM::Svn
 # or
 require 'capistrano/scm/git'
+require 'capistrano/puma'
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Puma # Default puma tasks
 install_plugin Capistrano::Puma::Workers # if you want to control the workers (in cluster mode)
