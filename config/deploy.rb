@@ -2,8 +2,8 @@
 lock '~> 3.14.1'
 
 set :puma_conf, '/var/www/mvp-raxae/shared/config/puma.rb'
-set :application, 'trackerr'
-set :repo_url, 'git@github.com:ogdenstudios/trackerr.git'
+set :application, 'mvp-raxae'
+set :repo_url, 'git@github.com:raxae-git/mvp-raxae.git'
 set :deploy_to, '/home/ubuntu/var/www/mvp-raxae'
 set :use_sudo, true
 set :branch, 'master'
