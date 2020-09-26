@@ -47,11 +47,11 @@ group :development do
 
   # Rails ERD - Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
-  gem 'sqlite3', '~> 1.4'
 end
 
 group :production do
   # gem 'pg', '~> 1.2.3'
+  gem 'sqlite3', '~> 1.4'
 end
 
 gem 'devise'
