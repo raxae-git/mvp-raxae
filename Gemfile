@@ -27,9 +27,9 @@ gem 'figaro'
 
 gem 'capistrano'
 gem 'capistrano3-puma'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
-gem 'capistrano-rbenv'
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rails', require: false
+gem 'capistrano-rvm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
