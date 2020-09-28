@@ -37,9 +37,9 @@ lock '~> 3.14.1'
 set :application, 'mvp-raxae' # change this to the name of your app
 set :repo_url, 'git@github.com:raxae-git/mvp-raxae.git' # change this to the url of your app on github
 set :branch, :master
-set :deploy_to, '/home/ubuntu/mvp-raxae'
+set :deploy_to, '/var/www/mvp-raxae'
 set :pty, true
-set :linked_files, %w{config/master.key}
+set :linked_files, %w[config/master.key]
 set :linked_dirs, %w[bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads]
 set :keep_releases, 5
 set :rvm_type, :user
