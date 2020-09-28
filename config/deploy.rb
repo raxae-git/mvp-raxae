@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.14.1'
 
-set :puma_conf, 'home/ubuntu/var/www/mvp-raxae/shared/config/puma.rb'
+set :puma_conf, '/var/www/mvp-raxae/shared/config/puma.rb'
 set :application, 'mvp-raxae'
 set :repo_url, 'git@github.com:raxae-git/mvp-raxae.git'
 set :deploy_to, '/home/ubuntu/var/www/mvp-raxae'
