@@ -26,7 +26,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'figaro'
 
 gem 'capistrano'
-gem 'capistrano3-puma'
+gem 'capistrano3-puma', '>= 3.4.0'
 gem 'capistrano-bundler', require: false
 gem 'capistrano-rails', require: false
 gem 'capistrano-rvm'

@@ -227,7 +227,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
-  capistrano3-puma
+  capistrano3-puma (>= 3.4.0)
   devise
   figaro
   jbuilder (~> 2.7)
