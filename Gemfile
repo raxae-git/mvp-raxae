@@ -28,11 +28,7 @@ gem 'figaro'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'capistrano'
-  gem 'capistrano3-puma', '>= 3.4.0'
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-rvm'
+  gem 'sqlite3', '~> 1.4'
 end
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -50,7 +46,6 @@ end
 
 group :production do
   # gem 'pg', '~> 1.2.3'
-  gem 'sqlite3', '~> 1.4'
 end
 
 gem 'devise'
