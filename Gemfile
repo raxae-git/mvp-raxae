@@ -29,12 +29,13 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capistrano', '~> 3.14', require: false
+  gem 'capistrano3-unicorn'
   gem 'capistrano-bundler', '~> 2.0'
   gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-rvm'
+  gem 'puma', '~> 4.1'
 end
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '~> 3.2'
@@ -51,6 +52,7 @@ end
 group :production do
   # gem 'pg', '~> 1.2.3'
   gem 'mysql2' # , '~> 0.4.4'
+  gem 'unicorn'
 end
 
 gem 'devise'
