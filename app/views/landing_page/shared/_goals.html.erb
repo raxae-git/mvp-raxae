@@ -8,10 +8,10 @@
     <h3 class="text-4xl mb-2 italic text-center font-bold leading-normal">Nossas Metas</h3>
     <hr class="borda w-16 h-1 mr-auto ml-auto text-center mt-5 border-main">
   </div>
-  <div class="container w-full mr-auto ml-auto items-center -mt-64 md:mt-0">
+  <div class="container w-full mr-auto ml-auto items-center -mt-64 lg:mt-0">
     <div class="flex flex-wrap">
       <div class="pt-48 w-full md:w-3/12 px-4 mr-auto ml-auto">
-        <div class="flex-auto hidden md:block">
+        <div class="flex-auto hidden lg:block">
           <div class="relative text-center bg-white shadow-lg <%= change_class(@count, 200, 2000) %> rounded-lg">
             <div class="pt-12">
               <p class="text-xs">
@@ -20,8 +20,8 @@
             </div>
             <div class="pt-5">
               <p class="text-xs text-gray-PJA">Sorteio de</p>
-              <p class="text-2xl font-bold pt-1 uppercase">03 meses<br /> de spotify</p>
-              <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
+              <p class="text-2xl font-bold pt-1 uppercase">02 meses<br /> grátis</p>
+              <p class="text-xs pt-2 text-gray-PJA">1 grupo</p>
             </div>
             <div class="<%= change_class_text(@count, 800) %> pt-10 pb-8">
               <p class="text-sm">Raxadores Abordo</p>
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <div class="w-full hidden md:block mr-auto ml-auto md:w-5/12 px-4 justify-center">
+      <div class="w-full hidden lg:block mr-auto ml-auto md:w-5/12 px-4 justify-center">
         <% if @count.blank? || @count < 200%>
         <img src="<%= asset_path('Material/Material/foguete_level_-1.png')%>" />
         <% elsif @count >= 200 && @count < 800 %>
@@ -42,8 +42,8 @@
         <img src="<%= asset_path('Material/Material/foguete_level_03.png')%>" />
         <% end %>
       </div>
-      <div class="w-full md:w-3/12 px-4 text-center mr-auto ml-auto">
-        <div class="flex-auto mt-10 md:mt-0">
+      <div class="w-full lg:w-3/12 px-4 text-center mr-auto ml-auto">
+        <div class="flex-auto mt-10 lg:mt-0">
           <div class="relative text-center bg-white <%= change_class(@count, 800, 2000) %> shadow-lg rounded-lg">
             <div class="pt-12">
               <p class="text-xs">
@@ -53,7 +53,7 @@
             <div class="pt-5">
               <p class="text-xs text-gray-PJA">Sorteio de</p>
               <p class="text-2xl font-bold pt-1 uppercase">1 ano de<br /> netflix</p>
-              <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
+              <p class="text-xs pt-2 text-gray-PJA">10 telas premium</p>
             </div>
             <div class="<%= change_class_text(@count, 2000) %> pt-10 pb-8">
               <p class="text-sm">Raxadores Abordo</p>
@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <div class="flex-auto block md:hidden mt-10 md:mt-20">
+        <div class="flex-auto block lg:hidden mt-10 md:mt-20">
           <div class="relative text-center bg-white shadow-lg <%= change_class(@count, 200, 2000) %> rounded-lg">
             <div class="pt-12">
               <p class="text-xs">
@@ -71,8 +71,8 @@
             </div>
             <div class="pt-5">
               <p class="text-xs text-gray-PJA">Sorteio de</p>
-              <p class="text-2xl font-bold pt-1 uppercase">03 meses<br /> de spotify</p>
-              <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
+              <p class="text-2xl font-bold pt-1 uppercase">02 meses<br /> grátis</p>
+              <p class="text-xs pt-2 text-gray-PJA">1 grupo</p>
             </div>
             <div class="<%= change_class_text(@count, 800) %> pt-10 pb-8">
               <p class="text-sm">Raxadores Abordo</p>
@@ -90,7 +90,7 @@
             </div>
             <div class="pt-5">
               <p class="text-xs text-gray-PJA">Sorteio de</p>
-              <p class="text-2xl font-bold pt-1 uppercase">02 meses<br /> grátis</p>
+              <p class="text-2xl font-bold pt-1 uppercase">03 meses<br /> de spotify</p>
               <p class="text-xs pt-2 text-gray-PJA">1 raxador</p>
             </div>
             <div class="<%= change_class_text(@count, 200) %> pt-10 pb-8">
