@@ -14,7 +14,7 @@ class LandingPageController < ApplicationController
   def privacy_policies; end
 
   def create
-    if @count >= 200
+    if (@count.blank? != true) && @count >= 200
       send_leads
     else
       @beta_user = BetaUser.new(beta_users_params)

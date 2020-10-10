@@ -9,13 +9,13 @@ module LandingPageHelper
 
   def change_class_text(number, cond)
     if number.blank?
-      ''
+      'text-gray-PJA'
     else
-      if number >= cond 
+      if number >= cond
         'text-main'
       else
         'text-gray-PJA'
-      end 
+      end
     end
   end
 end

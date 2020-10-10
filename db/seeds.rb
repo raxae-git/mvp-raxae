@@ -40,4 +40,34 @@ when 'production'
     id: 1
   )
   puts 'OK!!!'
+
+when 'development'
+  services = ['Netflix',
+              'Spotify',
+              'Deezer',
+              'Youtube Premium']
+
+  puts 'Cadastrando Serviços'
+  services.each do |service|
+    Service.create!(
+      title: service,
+      kind: 'Video/Musica',
+      description: 'Zombie ipsum reversus ab viral inferno'
+    )
+  end
+  puts 'OK!!!'
+
+  puts 'Cadastrando Administrador'
+  Admin.create!(
+    email: 'admin@mail.com',
+    password: '12345678',
+    password_confirmation: '12345678'
+  )
+  puts 'OK!!!'
+
+  puts 'Cadastrando Counter_Cache'
+  CountUser.create!(
+    id: 1
+  )
+  puts 'OK!!!'
 end
