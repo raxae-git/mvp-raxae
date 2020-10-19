@@ -24,14 +24,13 @@ when 'production'
 
   puts 'Cadastrando Administradores'
   Admin.create!(
-    email: 'willamygt@gmail.com',
-    password: '92478038',
-    password_confirmation: '92478038'
-  )
-  Admin.create!(
-    email: 'juniorpinho24@gmail.com',
-    password: '94960554',
-    password_confirmation: '94960554'
+    [{ email: 'willamygt@gmail.com',
+       password: '92478038',
+       password_confirmation: '92478038' },
+
+     { email: 'juniorpinho24@gmail.com',
+       password: '94960554',
+       password_confirmation: '94960554' }]
   )
   puts 'OK!!!'
 
@@ -49,7 +48,7 @@ when 'development'
 
   puts 'Cadastrando Serviços'
   services.each do |service|
-    Service.create!(
+    Service.find_or_create_by!(
       title: service,
       kind: 'Video/Musica',
       description: 'Zombie ipsum reversus ab viral inferno'
@@ -66,7 +65,7 @@ when 'development'
   puts 'OK!!!'
 
   puts 'Cadastrando Counter_Cache'
-  CountUser.create!(
+  CountUser.find_or_create_by!(
     id: 1
   )
   puts 'OK!!!'

@@ -99,12 +99,8 @@ ActiveRecord::Schema.define(version: 2020_09_10_195825) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "leader_group_id", null: false
-    t.integer "member_group_id", null: false
     t.integer "service_id", null: false
     t.decimal "value"
-    t.index ["leader_group_id"], name: "index_groups_on_leader_group_id"
-    t.index ["member_group_id"], name: "index_groups_on_member_group_id"
     t.index ["service_id"], name: "index_groups_on_service_id"
   end
 
@@ -158,8 +154,6 @@ ActiveRecord::Schema.define(version: 2020_09_10_195825) do
   add_foreign_key "deleted_members", "groups"
   add_foreign_key "group_dates", "beta_users"
   add_foreign_key "group_dates", "groups"
-  add_foreign_key "groups", "leader_groups"
-  add_foreign_key "groups", "member_groups"
   add_foreign_key "groups", "services"
   add_foreign_key "leader_groups", "beta_users"
   add_foreign_key "leader_groups", "groups"

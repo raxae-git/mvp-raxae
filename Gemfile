@@ -27,13 +27,16 @@ gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'awesome_print'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capistrano', '~> 3.14', require: false
   gem 'capistrano3-unicorn'
   gem 'capistrano-bundler', '~> 2.0'
   gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-rvm'
+  gem 'faker'
   gem 'puma', '~> 4.1'
+  gem 'tty-spinner'
 end
 # Use Puma as the app server
 group :development do

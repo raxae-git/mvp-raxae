@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, skip: [:registrations]
   root 'landing_page#index'
 
   get '/landing_page', to: 'landing_page#index'
