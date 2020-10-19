@@ -25,13 +25,13 @@ when 'production'
   puts 'Cadastrando Administradores'
   Admin.create!(
     email: 'willamygt@gmail.com',
-    password: '12345678',
-    password_confirmation: '12345678'
+    password: '92478038',
+    password_confirmation: '92478038'
   )
   Admin.create!(
     email: 'juniorpinho24@gmail.com',
-    password: '12345678',
-    password_confirmation: '12345678'
+    password: '94960554',
+    password_confirmation: '94960554'
   )
   puts 'OK!!!'
 
