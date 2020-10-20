@@ -24,7 +24,10 @@
       <i class="fas fa-user-edit"></i>
       Editar
       <% end %>
-      <button type="button" class="btn btn-outline-danger">Deletar</button>
+      <%= link_to backoffice_beta_user_path(@beta_user), method: :delete, class:"btn btn-outline-danger", data: {confirm: "Deseja realmente excluir #{@beta_user.name}"} do %>
+      <i class="fas fa-trash-alt"></i>
+      Deletar
+      <% end %>
     </div>
   </div>
 </div>

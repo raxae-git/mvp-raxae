@@ -25,9 +25,9 @@
         <%= link_to backoffice_beta_user_path(user), class:"btn btn-outline-info", style:"margin-right: 10px;" do %>
         <i class="fas fa-info" style="margin: 4px 6px 4px 6px;"></i>
         <% end %>
-        <a href="#" class="btn btn-outline-danger">
-          <i class="fas fa-trash-alt" style="margin: 4px;"></i>
-        </a>
+        <%= link_to backoffice_beta_user_path(user), method: :delete, class:"btn btn-outline-danger", data: {confirm: "Deseja realmente excluir #{user.name}"} do %>
+        <i class="fas fa-trash-alt" style="margin: 4px;"></i>
+        <% end %>
       </td>
     </tr>
     <% end %>

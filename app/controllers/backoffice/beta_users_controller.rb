@@ -32,7 +32,7 @@ class Backoffice::BetaUsersController < BackofficeController
 
   def destroy
     if @beta_user.destroy
-      redirect_to beta_users
+      redirect_to backoffice_beta_users_path
     else
       render :index
     end
