@@ -89,6 +89,20 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # Config SMTP Sendgrid
+  config.action_mailer.default_url_options = { host: 'raxae.com.br' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: 'apikey',
+    password: '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',
+    address: 'smtp.sendgrid.net',
+    domain: 'raxae.com.br',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write

@@ -33,12 +33,13 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '6cb29396b24608',
-    :password => '9f8cfbb75c2d69',
-    :address => 'smtp.mailtrap.io',
-    :domain => 'smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    user_name: 'apikey',
+    password: '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',
+    address: 'smtp.sendgrid.net',
+    domain: 'raxae.com.br',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Don't care if the mailer can't send.

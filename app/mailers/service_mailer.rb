@@ -7,6 +7,6 @@ class ServiceMailer < ApplicationMailer
 
   def new_service(title)
     @title = title
-    mail to: 'example@teste.com', subject: "Novo Serviço #{@title}"
+    mail to: 'willamygt@gmail.com', subject: "O Novo Serviço para cadastrar é #{@title}"
   end
 end

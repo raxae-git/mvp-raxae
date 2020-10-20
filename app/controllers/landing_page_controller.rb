@@ -55,7 +55,7 @@ class LandingPageController < ApplicationController
   end
 
   def send_service(title_service)
-    if ServiceMailer.new_service(title_service).deliver_later!
+    if ServiceMailer.new_service(title_service).deliver_now!
       true
     else
       false
