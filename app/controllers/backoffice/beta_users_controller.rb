@@ -2,7 +2,7 @@ class Backoffice::BetaUsersController < BackofficeController
   before_action :set_beta_user, only: %i[show edit update destroy]
 
   def index
-    @beta_users = BetaUser.all
+    @beta_users = BetaUser.all.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show; end
