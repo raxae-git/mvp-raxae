@@ -1,0 +1,36 @@
+<div class="row" style="margin-top: 100px">
+  <div class="col-3">
+  </div>
+
+  <div class="col-6">
+    <%= form_with model:[:backoffice, @beta_user], local: true do |f| %>
+    <div class="form-group">
+      <%= label_tag :name %>
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= f.email_field :email, class:"form-control" %>
+    </div>
+    <div class="row">
+      <div class="form-group col-6">
+        <%= label_tag :messaging_service %>
+        <%= f.text_field :messaging_service, class:"form-control" %>
+      </div>
+      <div class="form-group col-6">
+        <%= label_tag :phone %>
+        <%= f.text_field :phone, class:"form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag :service_of_interest %>
+      <%= f.text_field :service_of_interest, class:"form-control" %>
+    </div>
+    <div class="text-center" style="margin-top: 10px;">
+      <%= f.button :submit, class:"btn btn-outline-success" do%>
+      Salvar
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

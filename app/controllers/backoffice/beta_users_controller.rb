@@ -13,6 +13,15 @@ class Backoffice::BetaUsersController < BackofficeController
 
   def edit; end
 
+  def create
+    @beta_user = BetaUser.new(params_beta_user)
+    if @beta_user.save
+      redirect_to backoffice_beta_users_path
+    else
+      render :edit
+    end
+  end
+
   def update
     if @beta_user.update(params_beta_user)
       redirect_to backoffice_beta_users_path
