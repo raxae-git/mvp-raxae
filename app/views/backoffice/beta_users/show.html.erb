@@ -1,0 +1,27 @@
+<div class="row" style="margin-top: 100px">
+  <div class="col-3">
+  </div>
+  <div class="col-6">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-action">
+        <b>Nome:</b> <%= @beta_user.name %>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <b>Email:</b> <%= @beta_user.email %>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <b>Serviço de Messagem:</b> <%= @beta_user.messaging_service %>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <b>Telefone:</b> <%= @beta_user.phone %>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <b>Serviço de Interesse:</b> <%= @beta_user.service_of_interest %>
+      </li>
+    </ul>
+    <div class="text-center" style="margin-top: 10px;">
+      <button type="button" class="btn btn-outline-primary" style="margin-right: 10px;">Primary</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+    </div>
+  </div>
+</div>

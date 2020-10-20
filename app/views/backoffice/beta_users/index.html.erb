@@ -1,12 +1,15 @@
 <h1>Raxadores</h1>
 
 <table class="table table-hover">
-  <thead>
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
       <th scope="col">Telefone</th>
+      <th scope="col" class="text-center">
+        <button type="button" class="btn btn-outline-success"><i class="fas fa-user-plus"></i></button>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +19,14 @@
       <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.phone %></td>
+      <td class="text-center">
+        <%= link_to backoffice_beta_user_path(user), class:"btn btn-outline-info", style:"margin-right: 10px;" do %>
+        <i class="fas fa-info" style="margin: 4px 6px 4px 6px;"></i>
+        <% end %>
+        <a href="#" class="btn btn-outline-danger">
+          <i class="fas fa-trash-alt" style="margin: 4px;"></i>
+        </a>
+      </td>
     </tr>
     <% end %>
   </tbody>

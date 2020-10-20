@@ -17,7 +17,7 @@ namespace :dev do
         email: Faker::Internet.email,
         phone: Faker::PhoneNumber.cell_phone,
         messaging_service: %w[Whatsapp Telegram].sample,
-        service_of_interest: Service.all.sample
+        service_of_interest: Service.all.sample.title
       )
     end
   end
