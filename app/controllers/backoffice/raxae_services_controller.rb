@@ -7,6 +7,21 @@ class Backoffice::RaxaeServicesController < BackofficeController
 
   def show; end
 
+  def new
+    @service = Service.new
+  end
+
+  def edit; end
+
+  def create
+    @service = Service.new(params_service)
+    if @service.save!
+      redirect_to backoffice_raxae_services_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def set_service
@@ -14,6 +29,6 @@ class Backoffice::RaxaeServicesController < BackofficeController
   end
 
   def params_service
-    params.require(:raxae_services).permit(:title, :kind, :description, :value)
+    params.require(:service).permit(:title, :kind, :description, :value)
   end
 end
