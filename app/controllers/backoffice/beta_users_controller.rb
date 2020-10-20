@@ -15,7 +15,7 @@ class Backoffice::BetaUsersController < BackofficeController
 
   def update
     if @beta_user.update(params_beta_user)
-      redirect_to beta_users
+      redirect_to backoffice_beta_users_path
     else
       render :edit
     end

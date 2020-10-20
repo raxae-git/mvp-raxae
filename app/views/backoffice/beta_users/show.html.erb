@@ -20,7 +20,10 @@
       </li>
     </ul>
     <div class="text-center" style="margin-top: 10px;">
-      <button type="button" class="btn btn-outline-primary" style="margin-right: 10px;">Editar</button>
+      <%= link_to edit_backoffice_beta_user_path(@beta_user), class:"btn btn-outline-primary", style:"margin-right: 10px;" do %>
+      <i class="fas fa-user-edit"></i>
+      Editar
+      <% end %>
       <button type="button" class="btn btn-outline-danger">Deletar</button>
     </div>
   </div>
