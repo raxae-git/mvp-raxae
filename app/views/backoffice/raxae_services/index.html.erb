@@ -1,11 +1,16 @@
 <h1>Serviços</h1>
 
 <table class="table table-hover">
-  <thead>
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Tipo</th>
+      <th scope="col" class="text-center">
+        <%= link_to new_backoffice_raxae_service_path, class:"btn btn-outline-success" do %>
+        <i class="fas fa-plus"></i>
+        <% end %>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +19,14 @@
       <th scope="row"><%= service.id %></th>
       <td><%= service.title %></td>
       <td><%= service.kind %></td>
+      <td class="text-center">
+        <%= link_to backoffice_raxae_service_path(service), class:"btn btn-outline-info", style:"margin-right: 10px;" do %>
+        <i class="fas fa-info" style="margin: 4px 6px 4px 6px;"></i>
+        <% end %>
+        <%= link_to backoffice_raxae_service_path(service), method: :delete, class:"btn btn-outline-danger", data: {confirm: "Deseja realmente excluir #{service.title}"} do %>
+        <i class="fas fa-trash-alt" style="margin: 4px;"></i>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>
