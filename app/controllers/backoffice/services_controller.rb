@@ -30,6 +30,14 @@ class Backoffice::ServicesController < BackofficeController
     end
   end
 
+  def destroy
+    if @service.destroy
+      redirect_to backoffice_services_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def set_service
