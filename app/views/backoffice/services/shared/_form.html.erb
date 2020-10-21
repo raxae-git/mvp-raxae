@@ -3,7 +3,7 @@
   </div>
 
   <div class="col-6">
-    <%= form_with model: @service, url: backoffice_raxae_services_path(@service) , local: true do |f| %>
+    <%= form_with model: [:backoffice, @service], local: true do |f| %>
     <div class="form-group">
       <%= label_tag :title %>
       <%= f.text_field :title, class:"form-control" %>
@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
       <%= label_tag :value %>
-      <%= f.number_field :value, class:"form-control", min:"0", value:"0", step:"0.1" %>
+      <%= f.number_field :value, class:"form-control", min:"0", value:"#{@service.value.blank? ? 0 : @service.value}", step:"0.01" %>
     </div>
     <div class="text-center" style="margin-top: 10px;">
       <%= f.button :submit, class:"btn btn-outline-success" do%>

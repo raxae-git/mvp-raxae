@@ -1,4 +1,4 @@
-class Backoffice::RaxaeServicesController < BackofficeController
+class Backoffice::ServicesController < BackofficeController
   before_action :set_service, only: %i[show edit update destroy]
 
   def index
@@ -16,9 +16,17 @@ class Backoffice::RaxaeServicesController < BackofficeController
   def create
     @service = Service.new(params_service)
     if @service.save!
-      redirect_to backoffice_raxae_services_path
+      redirect_to backoffice_services_path
     else
       render :index
+    end
+  end
+
+  def update
+    if @service.update!(params_service)
+      redirect_to backoffice_services_path
+    else
+      render :edit
     end
   end
 

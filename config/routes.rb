@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :beta_users
     resources :groups
-    resources :raxae_services
+    resources :services
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

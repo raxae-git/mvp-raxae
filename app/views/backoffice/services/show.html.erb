@@ -17,11 +17,11 @@
       </li>
     </ul>
     <div class="text-center" style="margin-top: 10px;">
-      <%= link_to edit_backoffice_raxae_service_path(@service), class:"btn btn-outline-primary", style:"margin-right: 10px;" do %>
+      <%= link_to edit_backoffice_service_path(@service), class:"btn btn-outline-primary", style:"margin-right: 10px;" do %>
       <i class="fas fa-user-edit"></i>
       Editar
       <% end %>
-      <%= link_to backoffice_raxae_service_path(@service), method: :delete, class:"btn btn-outline-danger", data: {confirm: "Deseja realmente excluir #{@service.title}"} do %>
+      <%= link_to backoffice_service_path(@service), method: :delete, class:"btn btn-outline-danger", data: {confirm: "Deseja realmente excluir #{@service.title}"} do %>
       <i class="fas fa-trash-alt"></i>
       Deletar
       <% end %>
