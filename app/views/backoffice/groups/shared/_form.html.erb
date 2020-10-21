@@ -1,0 +1,40 @@
+<div class="row" style="margin-top: 100px">
+  <div class="col-3">
+  </div>
+
+  <div class="col-6">
+    <%= form_with model: [:backoffice, @group], local: true do |f| %>
+    <div class="form-group">
+      <%= label_tag :title %>
+      <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :description %>
+      <%= f.text_area :description, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :service_id %>
+      <%= f.collection_select(:service_id, @service, :id, :title, {}, {class:"form-control"}) %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :value %>
+      <%= f.number_field :value, class:"form-control", min:"0", value:"#{@group.value.blank? ? 0 : @group.value}", step:"0.01" %>
+    </div>
+    <%= f.fields_for :leader_group do |f| %>
+    <%= f.label :beta_user_id %>
+    <%= f.number_field :beta_user_id, class:"form-control", min:"1", value:"1", step:"any" %>
+    <% end %>
+    <div class="member_groups">
+      <%= f.fields_for :member_groups do |member_group| %>
+      <%= render "member_group_fields", f: member_group %>
+      <% end %>
+      <%= link_to_add_association 'Adcionar Membro', f, :member_groups%>
+    </div>
+    <div class="text-center" style="margin-top: 10px;">
+      <%= f.button :submit, class:"btn btn-outline-success" do %>
+      Salvar
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

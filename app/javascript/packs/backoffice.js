@@ -1,3 +1,5 @@
+require("jquery")
+require("@nathanvda/cocoon")
 import 'bootstrap'
 import '../css/backoffice.scss'
 
